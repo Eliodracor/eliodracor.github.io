@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="C:\Users\MONSTER\Desktop\Javascript\blog_site\_site\assets\home.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body{
+            background-image: url(https://www.jotform.com/blog/wp-content/uploads/2010/11/ABSTRACT-3.jpg);
+            margin: 0px;
+            padding: 0px;
+            height: 100vh;
+            background-size: 1900px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        #container{
+            height: 100%;
+            display: grid;
+            gap: 25px 25px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-areas:
+                "header header header header"
+                "subhead subhead subhead subhead"
+                "content content content sagbar"
+                "content content content sagbar"
+                "altcontent altcontent altcontent altcontent"
+        }
+        #header{grid-area: header;}
+        #sagbar{grid-area: sagbar;}
+        #content{grid-area: content;}
+        #altcontent{grid-area: altcontent;}
+        #header{
+            background-color: #38535A;
+            width: 100%;
+            height: 100px;
+            color:white;
+            font-size: 14spx;
+            line-height: 48px;
+            padding-left: 20px;
+            -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 3px 24px 0px rgba(0,0,0,0.07); 
+            box-shadow: 0px 10px 13px -7px #000000, 0px 3px 24px 0px rgba(0,0,0,0.07);
+            position: fixed;    
+            z-index: 1;
+        }
+        #subhead{
+            background-color: brown;
+            top: 40px;
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 430px;
+            -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 3px 24px 0px rgba(0,0,0,0.07); 
+            box-shadow: 0px 10px 13px -7px #000000, 0px 3px 24px 0px rgba(0,0,0,0.07);
+        }
+        .subart{
+           width: 100%;
+           height: 430px;
+        }
+        .subtext{
+            position: relative;
+            top: -50px;
+            font-size: 35px;
+            color: wheat;
+        }
+        #sagbar{
+            position: relative;
+            margin-right: 50px;
+            top: 450px;
+            height: 100%;
+            position: relative;
+        }
+        #content{
+            margin-left:50px;
+            padding: 20px;
+            position: relative;
+            top: 450px;
+            text-align: center;
+        }
+        .contentart{
+            width: 200px;
+            height: 250px;
+            display: block;
+            transition: 500ms all;
+            -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 3px 24px 0px rgba(0,0,0,0.07); 
+            box-shadow: 0px 10px 13px -7px #000000, 0px 3px 24px 0px rgba(0,0,0,0.07);
+        }
+        .alt{
+            background-color: transparent;
+            height: 250px;
+            width: 200px;
+            position: relative;
+            margin: 20px;
+            float: left;
+            display: block;
+        }
+        .alt:hover .overlay{
+            background-color: #B3A328;
+            transform: scale(1.2, 1.2)
+        }
+        .alt:hover img{
+            transition: 500ms all;
+            transform: scale(1.2, 1.2)
+        }
+        .overlay{
+            height: 100%;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+            transition: 500ms all;
+        }
+        .text{
+            text-align: center;
+            top: 45%;
+            position: relative;
+            visibility: hidden;
+        }
+        .alt:hover .text{
+            visibility: visible;
+            transition: 500ms all;
+        }
+        .events{
+            transition: 500ms all;
+            height: 140px;
+            position: relative;
+            box-shadow: none;
+            background-color: transparent;
+            z-index: 0;
+            color: rgba(0, 0, 0, 0.616);
+            box-shadow: 0px 10px 13px -7px #000000, 0px 3px 24px 0px rgba(0,0,0,0.07);
+            line-height: 30px;
+            background-color: #f2eecb;
+            font-size: 14px;
+        }
+        tr:hover .events{
+            transform: scale(1.2, 1.2);
+            z-index: 1;
+        }
+        table th{
+            margin: 0px;
+            padding: 0px; 
+        }
+        table{
+            font-family: century-gothic, sans-serif;
+            padding: 10px;
+            -webkit-box-shadow: 0px 0px 11px 2px rgba(0,0,0,0.46); 
+            box-shadow: 0px 0px 11px 2px rgba(0,0,0,0.46);
+        }
+        .logo{
+            position: relative;
+            top: 7px;
+            left: 20px;
+            width: 130px;
+        }
+        a{
+            text-decoration: none;
+            font-size: 16px;
+            color: wheat;
+            position: relative;
+            left: 60%;
+            margin: 7px;
+        }
+        .src{
+            position: relative;
+            left: 75%;
+            top: -50px;
+            background-color: #4a6e77;
+            border-style: none;
+            color: wheat;
+        }
+        .src:focus{
+            outline: none;
+        }
+        #altcontent{
+            margin:auto;
+            padding: 20px;
+            position: relative;
+            top: 450px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <img src="https://i.ibb.co/4scYRDx/600c55cef3bd5c0004b0eaf1.png" alt="" class="logo">
+            <input type="search" class="src">
+            <a href="#content">ARTS & ARTISTS</a>
+            <a href="#altcontent">SPEAKERS</a>
+        </div>
+        <div id="subhead">
+            <img class="subart" src="https://www.interbustur.com/wp-content/uploads/2016/06/paris-louvre-m%C3%BCzesi.jpg" alt="">
+            <div class="subtext">What is Expressionism? The Art of the Emotional Over the Physical - Conference</div>
+        </div>
+        <div id="content">
+            <h1>Conference Topics</h1>
+            <div class="alt">
+                <img class="contentart" src="http://www.leblebitozu.com/wp-content/uploads/2017/06/claude-monet-bain-a-la-grenouillere-1869.jpg" alt="">
+                <div class="overlay">
+                <div class="text">Claude Monet, Bain à la Grenouillère, 1869</div>
+                </div>
+            </div>
+            <div class="alt">
+                <img class="contentart" src="http://www.leblebitozu.com/wp-content/uploads/2017/06/Pierre-Auguste-Renoir-Lunch-At-The-Restaurant-1875.jpg" alt="">
+                <div class="overlay">
+                    <div class="text">Pierre-Auguste Renoir, Lunch At The Restaurant, 1875</div>
+                </div>
+            </div>
+            <div class="alt">
+                <img class="contentart" src="http://www.leblebitozu.com/wp-content/uploads/2016/10/gustav-klimt-opucuk-min.jpg" alt="">
+                <div class="overlay">
+                    <div class="text">Gustav Klimt, Öpücük, 1907-1908</div>
+                </div>
+            </div>
+            <div class="alt">
+                <img class="contentart" src="http://www.leblebitozu.com/wp-content/uploads/2016/10/Oskar-Kokoschka-Lovers-with-cat-min.jpg" alt="">
+                <div class="overlay">
+                    <div class="text">Oskar Kokoschka, Lovers With Cat, 1917</div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="alt">
+                <img class="contentart" src="http://www.leblebitozu.com/wp-content/uploads/2016/10/Emil-Nolde-Two-Women-in-a-garden-min.jpg" alt="">
+                <div class="overlay">
+                    <div class="text">Emil Nolde, Two Women In A Garden, 1915</div>
+                </div>
+            </div>
+            <div class="alt">
+                <img class="contentart" src="http://www.leblebitozu.com/wp-content/uploads/2016/10/Max-Pechstein-Fishing-Boats-min.jpg" alt="">
+                <div class="overlay">
+                    <div class="text">Max Pechstein , Fishing Boats In Afternoon Su, 1921</div>
+                </div>
+            </div>
+            <div class="alt">
+                <img class="contentart" src="http://www.leblebitozu.com/wp-content/uploads/2016/10/franz-marc-little-yellow-horses-min.jpg" alt="">
+                <div class="overlay">
+                    <div class="text">Franz Marc, Little Yellow Horses, 1912</div>
+                </div>
+            </div>
+            <div class="alt">
+                <img class="contentart" src="http://www.leblebitozu.com/wp-content/uploads/2016/10/paul-klee-Versunkene-Landschaft-min.jpg" alt="">
+                <div class="overlay">
+                    <div class="text">Paul Klee, Versunkene Landschaft, 1918</div>
+                </div>
+            </div>
+        </div>
+        <table id="sagbar"> 
+            <tr>
+                <th>
+                    Conferences
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <div class="events">
+                        Street:  Merter
+                        City:   Güngören
+                        State/province/area:    Istanbul
+                        Phone number  212 6378729
+                        Country calling code  +90
+                        Country  Turkey                       
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <div class="events">
+                        Street:  Dudullu
+                        City:   Ümraniye
+                        State/province/area:    Istanbul
+                        Phone number  6114952
+                        Country calling code  +90
+                        Country  Turkey
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <div class="events">
+                        Street:  Yenişehir
+                        City:   Konak
+                        State/province/area:    Izmir
+                        Phone number  232 4588227
+                        Country calling code  +90
+                        Country  Turkey                        
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <div class="events">
+                        Street:  Balgat
+                        City:   Çankaya
+                        State/province/area:    Ankara
+                        Phone number  312 2867278
+                        Country calling code  +90
+                        Country  Turkey
+                    </div>
+                </th>
+            </tr>
+        </table>
+        <div id="altcontent">
+            <h1 >Speakers</h1>
+            <div class="alt">
+                <div .class="titlealt"Speakers></div>
+                <img src="https://i.pinimg.com/originals/9f/0a/de/9f0adeb31737e976285196b7feeee6eb.jpg" alt="" class="contentart">
+                <div class="overlay">
+                    <div class="text">Vincent van Gogh</div>
+                </div>
+            </div>
+            <div class="alt">
+                <img  src="https://www.sanatinoykusu.com/wp-content/uploads/2020/10/Edvard-Munch.jpg" alt="" class="contentart">
+                <div class="overlay">
+                    <div class="text">Edvard Munch</div>
+                </div>
+            </div>
+            <div class="alt">
+                <img  src="https://images-na.ssl-images-amazon.com/images/I/41gInJIxl2L._AC_SY1000_.jpg" alt="" class="contentart">
+                <div class="overlay">
+                    <div class="text">Egon Schiele</div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
